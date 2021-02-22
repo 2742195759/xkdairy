@@ -1,0 +1,26 @@
+<article class="post">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$']],
+            processEscapes: true
+          }
+        };
+    </script>
+
+	<header class="post-header">
+		<div class="post-title"> 
+			{{ page.title | escape }}
+		</div>
+		<time class="post-date dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+			{%- assign date_format = site.date_forma | default: "%Y/%m/%d" -%}
+			{{ page.date | date: date_format }}
+		</time>		
+	</header>
+
+	<div class="post-content">
+		{{ content }}
+	</div>
+</article>
